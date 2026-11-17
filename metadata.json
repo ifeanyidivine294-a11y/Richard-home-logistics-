@@ -1,0 +1,6 @@
+{
+  "name": "Richard Home Logistics",
+  "description": "Premium home furniture, electronics, and household appliances in Nigeria. Featuring real-time cart, Asaba and Delta State delivery calculation, pickup scheduler, and seamless WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

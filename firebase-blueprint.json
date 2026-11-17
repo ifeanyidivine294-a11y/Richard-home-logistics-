@@ -1,0 +1,122 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Customer and administrator user profiles",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "fullName": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "format": "email", "maxLength": 120 },
+        "phoneNumber": { "type": "string", "maxLength": 30 },
+        "savedAddress": { "type": "string", "maxLength": 250 },
+        "savedNearestBusStop": { "type": "string", "maxLength": 150 },
+        "role": { "type": "string", "enum": ["customer", "admin"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "fullName", "email"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Furniture, electronics, and appliance product catalog",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "name": { "type": "string", "maxLength": 150 },
+        "category": { "type": "string", "enum": ["beds", "tvs", "fridges", "glass-tables", "fans", "appliances"] },
+        "subcategory": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "inStock": { "type": "boolean" },
+        "stockCount": { "type": "number" },
+        "brand": { "type": "string", "maxLength": 100 },
+        "isFeatured": { "type": "boolean" },
+        "isNew": { "type": "boolean" }
+      },
+      "required": ["id", "name", "category", "subcategory", "price", "inStock"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer furniture and appliance orders with WhatsApp handoff tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "reference": { "type": "string", "maxLength": 50 },
+        "customerId": { "type": "string", "maxLength": 128 },
+        "orderType": { "type": "string", "enum": ["delivery", "pickup"] },
+        "subtotal": { "type": "number" },
+        "deliveryFee": { "type": "number" },
+        "grandTotal": { "type": "number" },
+        "status": { "type": "string", "enum": ["Pending WhatsApp Confirmation", "Confirmed", "Processing", "Completed"] },
+        "createdAt": { "type": "string" },
+        "whatsAppMessage": { "type": "string", "maxLength": 4000 }
+      },
+      "required": ["id", "reference", "orderType", "subtotal", "grandTotal", "status", "createdAt"]
+    },
+    "DeliveryArea": {
+      "title": "DeliveryArea",
+      "description": "Delivery zones and fee schedule for Asaba, Delta State and interstate",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "name": { "type": "string", "maxLength": 120 },
+        "fee": { "type": "number" },
+        "isCovered": { "type": "boolean" },
+        "note": { "type": "string", "maxLength": 250 }
+      },
+      "required": ["id", "name", "fee", "isCovered"]
+    },
+    "BusinessSettings": {
+      "title": "BusinessSettings",
+      "description": "Richard Home Logistics showroom contact and operational hours",
+      "type": "object",
+      "properties": {
+        "storeName": { "type": "string", "maxLength": 120 },
+        "tagline": { "type": "string", "maxLength": 150 },
+        "whatsAppNumber": { "type": "string", "maxLength": 30 },
+        "displayPhone": { "type": "string", "maxLength": 30 },
+        "physicalAddress": { "type": "string", "maxLength": 250 },
+        "openingHours": { "type": "string", "maxLength": 150 }
+      },
+      "required": ["storeName", "whatsAppNumber", "displayPhone", "physicalAddress", "openingHours"]
+    },
+    "Favourite": {
+      "title": "Favourite",
+      "description": "User saved products wishlist",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "productId": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "productId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Private user and administrator profiles"
+    },
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Public catalog items and prices"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Customer orders and WhatsApp requests"
+    },
+    "/deliveryAreas/{areaId}": {
+      "schema": "DeliveryArea",
+      "description": "Delivery fee configuration"
+    },
+    "/businessSettings/{settingId}": {
+      "schema": "BusinessSettings",
+      "description": "Store operational information"
+    },
+    "/favourites/{favId}": {
+      "schema": "Favourite",
+      "description": "User saved wishlist items"
+    }
+  }
+}

@@ -1,0 +1,880 @@
+﻿MASTER DEVELOPMENT PROMPT: RICHARD HOME LOGISTICS
+
+
+1. YOUR ROLE
+
+
+Act as a senior full-stack mobile application engineer, premium UI/UX designer, Firebase architect and e-commerce product developer with over 20 years of professional experience.
+
+
+You are responsible for designing and developing a complete, professional, functional, Android-ready product catalogue and ordering application for:
+
+
+Business name: RICHARD HOME LOGISTICS
+Business type: Home furniture, electronics and household appliances
+Business location: [INSERT TOWN], Nigeria
+Primary currency: Nigerian Naira (₦)
+Primary ordering channel: WhatsApp
+WhatsApp number: [CONFIRM COMPLETE NUMBER]
+
+
+This is a real business application. Do not produce a static prototype, decorative dashboard or collection of non-functional screens.
+
+
+Build a working application with functional navigation, forms, product selection, cart management, authentication, database integration and WhatsApp ordering.
+
+
+2. DESIGN DIRECTION AND BRAND IDENTITY
+
+
+Create an elegant, premium, modern and trustworthy shopping experience.
+
+
+Use the following design system consistently:
+
+
+- Midnight Navy: #071B49
+- Vibrant Orange: #FF8500
+- White: #FFFFFF
+- Soft Background: #F4F7FC
+- Text: #172033
+- WhatsApp Green: #16A34A
+
+
+Typography:
+
+
+- Use Inter or a similar modern sans-serif font.
+- Use bold, clear headings.
+- Maintain readable product descriptions and prices.
+- Use consistent font weights and spacing.
+
+
+Design requirements:
+
+
+- Premium product cards with subtle shadows.
+- Rounded corners, approximately 14–18px.
+- High-quality, realistic furniture and appliance photography.
+- Consistent image ratios.
+- Smooth transitions and subtle animations.
+- Clear hierarchy and generous spacing.
+- Large touch-friendly controls.
+- No cluttered layouts.
+- No excessive gradients.
+- No cartoon illustrations or generic icons in place of product photographs.
+
+
+The experience must be optimised for small Android screens first, while remaining responsive on tablets and desktop.
+
+
+Use the supplied UI reference image as the visual direction. Preserve the design personality while improving usability wherever necessary.
+
+
+3. APPLICATION ARCHITECTURE
+
+
+Build the application using:
+
+
+- React and TypeScript.
+- Responsive mobile-first design.
+- Firebase Authentication.
+- Cloud Firestore.
+- Firebase Storage for product photographs if required.
+- Firebase Hosting or another suitable deployment platform.
+- PWA manifest and service worker.
+- Secure, environment-based Firebase configuration.
+
+
+Organise the code into reusable components and maintainable modules.
+
+
+Do not put API keys, private credentials or secrets on the screen or in publicly exposed configuration.
+
+
+Firebase web configuration values are not equivalent to private server secrets. Protect the actual data through Firestore security rules and Firebase Authentication.
+
+
+Do not store passwords manually.
+
+
+4. APPLICATION SCREENS
+
+
+SCREEN 1: SPLASH SCREEN
+
+
+Create a beautiful branded opening screen.
+
+
+Include:
+
+
+- Richard Home Logistics logo.
+- Business name.
+- Tagline: "Quality Homes, Happier Families."
+- Premium home interior photograph.
+- Subtle loading animation.
+
+
+After loading, take the customer to the welcome/login experience.
+
+
+SCREEN 2: AUTHENTICATION
+
+
+Create a professional login and registration experience.
+
+
+Login fields:
+
+
+- Email address.
+- Password.
+- Show/hide password.
+- Forgot password.
+- Login button.
+
+
+Registration fields:
+
+
+- Full name.
+- Email address.
+- Phone number.
+- Password.
+- Confirm password.
+
+
+Authentication methods:
+
+
+- Email/password registration.
+- Email/password login.
+- Continue with Google.
+- Password reset through Firebase.
+
+
+Include:
+
+
+- Proper validation.
+- Clear error messages.
+- Loading indicators.
+- Success notifications.
+- Persistent authentication sessions.
+
+
+Allow customers to browse products without registering. Require authentication when they want to save favourites or access account-specific order history.
+
+
+SCREEN 3: HOME PAGE
+
+
+Build a premium shopping homepage.
+
+
+Header:
+
+
+- Richard Home Logistics logo.
+- Search icon or search field.
+- Notification area if implemented.
+- Shopping cart with live item count.
+- Customer profile.
+
+
+Hero section:
+
+
+- Large premium living-room photograph.
+- Heading: "Make Your Home Beautiful."
+- Supporting text: "Discover quality furniture and appliances at prices you'll love."
+- Primary CTA: "Shop Now".
+- Secondary CTA: "Explore Products".
+
+
+Category section:
+
+
+Create six attractive category cards with real product photographs.
+
+
+1. Beds & Bedroom Furniture.
+2. Televisions.
+3. Refrigerators.
+4. Glass Tables.
+5. Fans.
+6. Other Home Appliances.
+
+
+Each category card must be clickable and open its corresponding product catalogue.
+
+
+Featured products:
+
+
+- Display selected products.
+- Product photographs.
+- Product names.
+- Current prices.
+- Availability labels.
+- Add to Cart button.
+- View Details button.
+
+
+Include a prominent "Order Now" CTA.
+
+
+Bottom navigation:
+
+
+- Home.
+- Categories.
+- Favourites.
+- Cart.
+- Account.
+
+
+SCREEN 4: PRODUCT CATALOGUE
+
+
+Build a reusable product listing page.
+
+
+Each product card must contain:
+
+
+- Product photograph.
+- Product name.
+- Product type.
+- Price in Naira.
+- Availability.
+- Favourite button.
+- Add to Cart button.
+- View Details button.
+
+
+Filtering:
+
+
+- Minimum and maximum price.
+- Product type.
+- Size.
+- Colour where applicable.
+- Availability.
+- Sorting by price and newest products.
+
+
+Provide a search field that searches product names, categories and product descriptions.
+
+
+SCREEN 5: PRODUCT DETAILS
+
+
+When a customer clicks a product, open a dedicated product detail screen.
+
+
+Include:
+
+
+- Large product photograph.
+- Additional gallery photographs.
+- Product name.
+- Price.
+- Description.
+- Available sizes.
+- Available colours.
+- Brand only where the actual product is branded.
+- Product availability.
+- Quantity selector.
+- Add to Cart.
+- Order on WhatsApp.
+
+
+The quantity selector must have working plus and minus controls.
+
+
+The selected size, colour and quantity must be preserved when the customer adds the product to the cart.
+
+
+SCREEN 6: SHOPPING CART
+
+
+Create a clean shopping cart.
+
+
+Display:
+
+
+- Product image.
+- Product name.
+- Selected size.
+- Selected colour.
+- Quantity.
+- Unit price.
+- Subtotal.
+- Remove item.
+- Increase/decrease quantity.
+
+
+Calculate automatically:
+
+
+- Item subtotal.
+- Delivery fee where applicable.
+- Total amount.
+
+
+Include:
+
+
+- Continue Shopping.
+- Proceed to Order.
+
+
+Prevent customers from submitting an empty cart.
+
+
+SCREEN 7: CUSTOMER ORDER FORM
+
+
+This is one of the most important parts of the application.
+
+
+Create a beautifully organised, easy-to-complete checkout form.
+
+
+SECTION A: CUSTOMER INFORMATION
+
+
+Fields:
+
+
+- Full name.
+- Phone number.
+- Email address.
+- Home address.
+
+
+If the customer is logged in, automatically populate available profile information. Allow the customer to edit it.
+
+
+SECTION B: PRODUCT SELECTION
+
+
+Display the selected cart products and allow the customer to review:
+
+
+- Product category.
+- Product name.
+- Product type.
+- Size.
+- Colour.
+- Quantity.
+- Unit price.
+- Subtotal.
+
+
+Allow customers to return to the catalogue and add more products.
+
+
+SECTION C: DELIVERY OR PICKUP
+
+
+Present two large selectable cards:
+
+
+OPTION 1: DELIVER TO ME
+
+
+When selected, dynamically display the following fields underneath:
+
+
+- State.
+- Town or city.
+- Specific delivery address.
+- Nearest bus stop or recognised landmark.
+- Additional delivery instructions.
+
+
+Include a delivery-area dropdown.
+
+
+Automatically display the corresponding delivery fee using an owner-editable delivery-fee configuration.
+
+
+Delivery fee must be added to the order total.
+
+
+If the customer's location is not covered by the configured delivery areas, display:
+
+
+"Please contact us on WhatsApp to confirm delivery availability and charges."
+
+
+Do not invent delivery charges.
+
+
+OPTION 2: I WILL PICK IT UP
+
+
+When selected, dynamically display a pickup form underneath.
+
+
+Ask:
+
+
+"When would you like to come and pick up your order?"
+
+
+Fields:
+
+
+- Preferred pickup date.
+- Preferred pickup time.
+- Customer's phone number.
+
+
+Display the actual business opening hours: [INSERT OPENING HOURS].
+
+
+Only allow pickup dates and times within configured opening hours. Prevent past dates and unavailable time slots.
+
+
+Do not display delivery address fields when pickup is selected.
+
+
+Do not display pickup scheduling fields when delivery is selected.
+
+
+The form must dynamically switch between both options without refreshing the page.
+
+
+SECTION D: ORDER SUMMARY
+
+
+Display:
+
+
+- Customer information.
+- Selected products.
+- Quantities.
+- Product subtotal.
+- Delivery or pickup selection.
+- Delivery fee, where applicable.
+- Grand total.
+
+
+Add a required confirmation checkbox:
+
+
+"I confirm that my order details are correct."
+
+
+SCREEN 8: ORDER CONFIRMATION AND WHATSAPP
+
+
+Create a prominent CTA:
+
+
+"CONFIRM & SEND ORDER ON WHATSAPP"
+
+
+When clicked:
+
+
+1. Validate all required fields.
+2. Check the cart.
+3. Calculate the order total.
+4. Generate a unique order reference.
+5. Save the order request to Firestore for authenticated customers.
+6. Preserve the order information locally until WhatsApp is successfully opened.
+7. Generate a properly formatted WhatsApp message.
+8. Open the WhatsApp conversation with the complete order details pre-filled.
+
+
+Use:
+
+
+https://wa.me/[WHATSAPP_NUMBER_WITHOUT_PLUS]
+
+
+The WhatsApp message should contain:
+
+
+RICHARD HOME LOGISTICS — NEW ORDER
+
+
+Order Reference: [REFERENCE]
+
+
+CUSTOMER DETAILS
+Full Name:
+Phone Number:
+Email:
+Delivery Address:
+
+
+ORDER ITEMS
+
+
+1. Product:
+   Category:
+   Type:
+   Size:
+   Colour:
+   Quantity:
+   Unit Price:
+   Subtotal:
+
+
+ORDER SUMMARY
+Product Subtotal:
+Delivery/Pickup:
+Delivery Fee:
+Grand Total:
+
+
+DELIVERY DETAILS
+Town:
+Full Address:
+Nearest Bus Stop:
+Additional Instructions:
+
+
+OR
+
+
+PICKUP DETAILS
+Preferred Date:
+Preferred Time:
+
+
+CUSTOMER CONFIRMATION:
+I confirm that these order details are correct.
+
+
+Please confirm availability and the next steps for payment and fulfilment.
+
+
+IMPORTANT:
+For pickup orders, exclude delivery details.
+For delivery orders, exclude pickup scheduling details.
+Never display irrelevant empty fields in the WhatsApp message.
+
+
+If WhatsApp cannot open, show a clear fallback with a Copy Order Details button.
+
+
+Clearly explain that sending the WhatsApp message is the customer's confirmation request, not proof that the business has received payment or accepted the order.
+
+
+5. PRODUCT CATEGORIES AND SUBCATEGORIES
+
+
+Build the product catalogue with the following structure.
+
+
+BEDS:
+
+
+- Executive beds.
+- Adult beds.
+- Children's beds.
+- Bunk beds.
+- Bed frames.
+- Bedside furniture.
+- Wardrobes.
+- Bedroom sets.
+
+
+TELEVISIONS:
+
+
+- 32-inch TVs.
+- 43-inch TVs.
+- 50-inch TVs.
+- 55-inch TVs.
+- 65-inch TVs.
+- Smart TVs.
+- Android TVs.
+- LED TVs.
+
+
+REFRIGERATORS:
+
+
+- Table-top refrigerators.
+- Mini refrigerators.
+- Single-door refrigerators.
+- Double-door refrigerators.
+- Large-capacity refrigerators.
+
+
+GLASS TABLES:
+
+
+- Executive dining sets.
+- Glass dining tables.
+- Centre tables.
+- Side tables.
+
+
+FANS:
+
+
+- Standing fans.
+- Rechargeable fans.
+- Solar fans.
+- Table fans.
+
+
+OTHER HOME APPLIANCES:
+
+
+- Blenders.
+- Gas cookers.
+- Electric irons.
+- Microwaves.
+- Other household appliances.
+
+
+Every category and subcategory must be clickable and filter the correct products.
+
+
+6. PRODUCT PRICING AND DATA MANAGEMENT
+
+
+Use realistic Nigerian Naira price estimates as initial catalogue data.
+
+
+Treat all prices as editable seed data, not permanent market prices.
+
+
+Suggested initial price bands:
+
+
+- Plain bed frames: ₦105,000–₦300,000.
+- Premium padded beds: ₦250,000–₦1,600,000.
+- 32-inch smart TVs: approximately ₦225,000–₦310,000.
+- 43-inch smart TVs: approximately ₦315,000–₦389,000.
+- 55-inch 4K smart TVs: approximately ₦608,000–₦827,000.
+- Table-top refrigerators: approximately ₦136,000–₦200,000.
+- Double-door refrigerators: approximately ₦200,000–₦735,000 depending on capacity.
+- Standard standing fans: approximately ₦28,000–₦55,000.
+- Solar/rechargeable standing fans: approximately ₦75,000–₦130,000.
+- Centre tables: approximately ₦80,000–₦650,000 depending on material and design.
+
+
+For products without sufficiently verified current pricing, use clearly labelled provisional estimates and require owner confirmation before publishing.
+
+
+Do not invent exact product stock or claim that a particular brand is stocked.
+
+
+Do not use famous brand logos unless the business actually stocks those brands.
+
+
+Each product must have:
+
+
+- Product ID.
+- Product name.
+- Category.
+- Subcategory.
+- Description.
+- Product images.
+- Current selling price.
+- Previous price, if applicable.
+- Size options.
+- Colour options.
+- Stock quantity or availability status.
+- Brand, if applicable.
+- Featured status.
+- Date created.
+- Last updated.
+
+
+Use a central Firestore-backed product database so prices can be changed without editing application code.
+
+
+7. FIREBASE DATABASE
+
+
+Create appropriate Firestore collections:
+
+
+users
+products
+categories
+favourites
+orders
+deliveryAreas
+businessSettings
+
+
+User profiles must include:
+
+
+- UID.
+- Full name.
+- Email.
+- Phone number.
+- Saved address.
+- Created date.
+
+
+Favourites must be linked to the authenticated user.
+
+
+Orders must contain:
+
+
+- Order reference.
+- Customer UID.
+- Customer information.
+- Product snapshots.
+- Quantities.
+- Prices.
+- Delivery/pickup choice.
+- Delivery fee.
+- Total.
+- Order status.
+- Timestamp.
+
+
+Use secure Firestore rules.
+
+
+Requirements:
+
+
+- Users can read and update only their own profiles.
+- Users can read and modify only their own favourites.
+- Users can create and read their own order requests.
+- Customers must never edit product prices or business settings.
+- Only authorised administrators can manage products, prices, delivery fees and business settings.
+- Never use open public write permissions.
+- Validate important fields and data types in Firestore rules.
+
+
+Use Firebase Admin SDK or trusted server-side functionality for privileged administrative operations.
+
+
+8. USER EXPERIENCE AND FUNCTIONAL REQUIREMENTS
+
+
+Every visible button must have a real action.
+
+
+Test:
+
+
+- Login.
+- Registration.
+- Google sign-in.
+- Password reset.
+- Search.
+- Category navigation.
+- Product filters.
+- Product details.
+- Favourites.
+- Add to Cart.
+- Remove from Cart.
+- Quantity controls.
+- Delivery selection.
+- Pickup selection.
+- Dynamic form fields.
+- Price calculations.
+- WhatsApp order generation.
+- Order persistence.
+- Account profile.
+
+
+Provide:
+
+
+- Loading states.
+- Empty states.
+- Error states.
+- Success messages.
+- Form validation.
+- Responsive layouts.
+- Accessible button labels.
+- Proper navigation and back actions.
+
+
+Do not use fake buttons or placeholder interactions.
+
+
+9. VERSION 1 SCOPE
+
+
+Prioritise these features:
+
+
+1. Premium mobile interface.
+2. Authentication.
+3. Product categories.
+4. Product catalogue.
+5. Product details.
+6. Search and filtering.
+7. Shopping cart.
+8. Dynamic delivery/pickup form.
+9. WhatsApp ordering.
+10. Firestore persistence.
+11. Basic customer profile and favourites.
+
+
+Do not waste time building complex inventory accounting, payment gateways, staff management or advanced analytics in Version 1.
+
+
+Build the essential shopping and ordering journey properly first.
+
+
+10. TESTING AND DELIVERY
+
+
+Before declaring the project complete:
+
+
+- Run the application.
+- Resolve compilation errors.
+- Test all routes.
+- Test every button.
+- Test Firebase authentication.
+- Test Firestore permissions.
+- Test order calculations.
+- Test both delivery and pickup flows.
+- Test WhatsApp message formatting.
+- Test on narrow Android screen sizes.
+- Test installation as a PWA.
+
+
+Do not claim that a feature has been tested unless it has actually been tested.
+
+
+11. FINAL DELIVERABLES
+
+
+Provide:
+
+
+1. Complete working source code.
+2. Functional Firebase integration.
+3. Firestore security rules.
+4. Database structure.
+5. Editable product seed data.
+6. Responsive application.
+7. PWA installation configuration.
+8. Deployment instructions.
+9. Android APK packaging instructions using a suitable Android wrapper such as Capacitor.
+10. A list of completed tests and any remaining setup requirements.
+
+
+The finished application must look like a premium commercial shopping application, not a student project or generic template.
+
+
+FINAL INSTRUCTION: Build the actual application. Do not stop after generating a design, explaining an architecture or creating a static prototype.

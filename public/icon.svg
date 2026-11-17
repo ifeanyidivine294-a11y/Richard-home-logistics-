@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Rounded Background -->
+  <rect width="512" height="512" rx="112" fill="#071B49"/>
+  <!-- Roof Shape -->
+  <path d="M76 252L256 100L436 252" stroke="#FF8500" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Chimney -->
+  <path d="M370 196V140H320V154" stroke="#FF8500" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Four Window Panes -->
+  <rect x="204" y="240" width="46" height="46" rx="6" fill="#FFFFFF"/>
+  <rect x="262" y="240" width="46" height="46" rx="6" fill="#FFFFFF"/>
+  <rect x="204" y="298" width="46" height="46" rx="6" fill="#FFFFFF"/>
+  <rect x="262" y="298" width="46" height="46" rx="6" fill="#FFFFFF"/>
+  <!-- Brand Name Accent -->
+  <circle cx="390" cy="380" r="18" fill="#FF8500"/>
+  <circle cx="122" cy="380" r="18" fill="#FF8500"/>
+  <!-- Lower base line -->
+  <path d="M120 400H392" stroke="#FF8500" stroke-width="24" stroke-linecap="round"/>
+</svg>

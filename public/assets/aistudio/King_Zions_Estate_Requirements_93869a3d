@@ -1,0 +1,325 @@
+﻿CRITICAL APPLICATION CORRECTION — RICHARD HOME LOGISTICS
+You are now required to correct and complete the existing Richard Home Logistics application.
+IMPORTANT: THIS IS AN UPDATE TO THE EXISTING PROJECT, NOT A REBUILD.
+Preserve the existing application, its working components, branding, Firebase project, database, product data, navigation and visual identity.
+Do not delete existing records, reset Firebase, replace the existing project or create duplicate collections unnecessarily.
+The current application has serious missing functionality. Correct the following requirements completely.
+PART 1: FIX AUTHENTICATION
+The existing application currently does not have properly implemented login and registration functionality.
+Implement real Firebase Authentication.
+Create a complete authentication system containing:
+1. Email and password registration.
+2. Email and password login.
+3. Google sign-in.
+4. Forgot password.
+5. Password reset through Firebase email.
+6. Logout.
+7. Persistent login sessions.
+8. Proper authentication error handling.
+9. Loading indicators.
+10. Login and registration form validation.
+GOOGLE LOGIN IS MANDATORY.
+The Continue with Google button must actually authenticate the customer through Firebase Google Authentication.
+Do not leave a decorative Google button.
+Configure:
+* Google provider in Firebase Authentication.
+* Correct authorised domains.
+* Google OAuth configuration.
+* Firebase authentication persistence.
+* Correct redirect or popup handling depending on the supported environment.
+If Firebase configuration is incomplete, identify the missing configuration and provide the exact setup instructions. Do not pretend Google login is working when it is not.
+Customers must be able to browse the public store without registering, but account-specific features must require authentication.
+PART 2: TWO DISTINCT PORTALS
+The application must have two experiences operating within the same application.
+A. PUBLIC CUSTOMER PORTAL
+This is the normal shopping experience.
+Customers should access:
+* Home.
+* Categories.
+* Products.
+* Product details.
+* Search.
+* Favourites.
+* Shopping cart.
+* Customer order form.
+* Order history.
+* Profile.
+B. PRIVATE ADMINISTRATOR PORTAL
+Create a separate protected administrator dashboard.
+The administrator must be able to enter the private portal after signing in using the designated administrator Gmail account.
+ADMINISTRATOR EMAIL:
+Use the exact administrator Gmail address previously supplied by the business owner. If it is not present in the existing project configuration, request it rather than inventing an address.
+Do not allow ordinary customers to access the administrator dashboard.
+IMPORTANT SECURITY REQUIREMENT:
+Do not rely only on hiding administrator buttons or checking an email address in frontend JavaScript.
+Use Firebase Authentication and a trusted administrator role, preferably Firebase custom claims, with appropriate Firestore security rules.
+The administrator role must be provisioned securely.
+Only the authorised administrator should have permission to manage the store.
+After successful administrator login, provide access to:
+* Public Store.
+* Admin Dashboard.
+The administrator must also be able to preview the public store and return to the private dashboard.
+Normal customers must never see administrator management controls.
+PART 3: ADMINISTRATOR DASHBOARD
+Design a premium administrator dashboard using the existing navy, orange and white design system.
+Dashboard overview:
+Display:
+* Total products.
+* Total categories.
+* Available products.
+* Out-of-stock products.
+* Total order requests.
+* Recent orders.
+* Recently updated products.
+Create the following working management sections.
+A. PRODUCT MANAGEMENT
+Provide a functional Add New Product button.
+The administrator should be able to enter:
+* Product name.
+* Main category.
+* Subcategory.
+* Product description.
+* Product price in Naira.
+* Previous price, if applicable.
+* Product size.
+* Available colours.
+* Product brand, if applicable.
+* Stock quantity or availability.
+* Product photographs.
+* Featured product status.
+Provide buttons:
+* Save Product.
+* Edit Product.
+* Delete Product.
+* Update Product.
+* Cancel.
+All changes must save to Firestore.
+B. PRODUCT IMAGE MANAGEMENT
+Allow the administrator to:
+* Upload product photographs from a device.
+* Preview uploaded photographs.
+* Change the main product image.
+* Add additional gallery images.
+* Remove existing images.
+* Replace images.
+Use Firebase Storage for image storage.
+When the administrator changes a product photograph, the new photograph must appear automatically in the public catalogue and product details.
+Do not use placeholder images for products that have actual uploaded photographs.
+C. CATEGORY MANAGEMENT
+Create a working category management section.
+The administrator must be able to:
+* Add a new category.
+* Add a subcategory.
+* Edit a category name.
+* Upload category photographs.
+* Delete obsolete categories after checking associated products.
+The existing categories must be editable.
+D. PRICE MANAGEMENT
+The administrator must be able to change the selling price of every product.
+When a price is updated:
+* Save the new price to Firestore.
+* Update the public catalogue.
+* Update the product detail page.
+* Use the updated price for new cart calculations.
+* Display the correct price in future order requests.
+Existing order records must preserve their original purchase-request price snapshots.
+E. DELIVERY MANAGEMENT
+Create a dedicated Delivery Settings page.
+Allow the administrator to add and edit:
+* Delivery area.
+* State.
+* Town.
+* Delivery fee.
+* Delivery availability.
+* Special delivery instructions.
+Provide:
+* Add Delivery Area.
+* Edit Delivery Fee.
+* Delete Delivery Area.
+* Save Changes.
+Delivery fees must be editable without modifying application source code.
+The checkout form must automatically use the delivery fees configured by the administrator.
+Do not invent delivery prices.
+F. HOMEPAGE MANAGEMENT
+Allow the administrator to:
+* Change homepage banners.
+* Upload promotional images.
+* Change promotional headings.
+* Change promotional descriptions.
+* Select featured products.
+* Remove featured products.
+All updates should reflect on the public homepage.
+G. ORDER MANAGEMENT
+Create an administrator order-management section.
+Display:
+* Order reference.
+* Customer name.
+* Phone number.
+* Products ordered.
+* Quantities.
+* Total amount.
+* Delivery or pickup.
+* Date submitted.
+* Order status.
+Provide status options:
+* New.
+* Awaiting Confirmation.
+* Confirmed.
+* Processing.
+* Ready for Pickup.
+* Out for Delivery.
+* Completed.
+* Cancelled.
+The administrator must be able to inspect full order details and contact customers.
+PART 4: FIX THE CUSTOMER ORDER FORM
+The previous application does not properly display the order form.
+This must be corrected.
+Every relevant shopping call-to-action must lead the customer to the proper ordering process.
+Examples:
+* Order Now.
+* Buy Now.
+* Proceed to Order.
+* Checkout.
+Do not make product cards clickable without a meaningful action.
+When a customer clicks Order Now on an individual product, open the ordering form with that product already selected.
+When a customer clicks Proceed to Order from the cart, open the same form with all cart items already populated.
+Create a complete form with the following sections.
+SECTION A: CUSTOMER INFORMATION
+Required fields:
+1. Full name.
+2. Phone number.
+3. Email address.
+4. State.
+5. Town or city.
+6. Full residential address.
+7. Nearest bus stop or landmark.
+SECTION B: PRODUCT INFORMATION
+Display the selected products and allow the customer to confirm:
+1. Product category.
+2. Product name.
+3. Product type.
+4. Size.
+5. Colour.
+6. Quantity.
+7. Unit price.
+8. Subtotal.
+Customers must be able to add more products or remove selected products.
+SECTION C: DELIVERY METHOD
+Provide two large selectable options:
+OPTION 1: DELIVER TO ME
+When selected, show the delivery form underneath:
+* State.
+* Town.
+* Full delivery address.
+* Nearest bus stop.
+* Additional delivery instructions.
+Display the applicable delivery fee from the administrator's delivery settings.
+OPTION 2: I WILL PICK IT UP
+When selected, display:
+* Preferred pickup date.
+* Preferred pickup time.
+* Contact phone number.
+Show the actual configured business opening hours.
+Do not display pickup fields when delivery is selected.
+Do not display delivery address fields when pickup is selected.
+The two options must switch dynamically.
+SECTION D: ORDER SUMMARY
+Display:
+* Selected products.
+* Quantities.
+* Product subtotal.
+* Delivery or pickup method.
+* Delivery fee, where applicable.
+* Total amount.
+Include a required checkbox:
+"I confirm that the information supplied is correct."
+SECTION E: SUBMIT ORDER
+Provide a large green WhatsApp CTA:
+CONFIRM & SEND ORDER ON WHATSAPP.
+Generate a complete WhatsApp message containing the customer's details, products, sizes, quantities, prices, delivery information or pickup time and order total.
+Save authenticated customers' order requests in Firestore.
+If the customer is not authenticated, allow the WhatsApp ordering process without forcing account creation. Do not falsely associate a guest order with another customer's account.
+PART 5: REMOVE THE FIREBASE ERROR MESSAGE FROM THE CUSTOMER INTERFACE
+The current application displays an inappropriate message suggesting that Firebase has dropped or lost data.
+This must not appear on the public customer interface.
+Investigate the actual cause.
+Check:
+* Firebase configuration.
+* Authentication initialisation.
+* Firestore connection.
+* Firestore permissions.
+* Collection paths.
+* Missing documents.
+* Network errors.
+* Storage permissions.
+Remove developer diagnostics, technical Firebase warnings and internal error messages from normal customer-facing screens.
+Replace them with professional messages such as:
+"Unable to load products at the moment. Please try again."
+However, do not simply hide real database errors or suppress failures.
+Log technical errors appropriately for development and administrator diagnostics.
+Do not delete or reset any existing Firebase data.
+PART 6: DATA INTEGRITY AND SECURITY
+Use the existing Firebase project.
+Do not create duplicate product collections if suitable collections already exist.
+Use secure Firestore rules:
+* Customers can read published products.
+* Customers cannot edit product prices.
+* Customers cannot edit delivery settings.
+* Customers can manage only their own profiles.
+* Customers can manage only their own favourites.
+* Customers can read their own orders.
+* Customers cannot change administrator privileges.
+* Only authorised administrators can manage products, categories, images, delivery settings and order statuses.
+Ensure that administrative operations are authorised on the backend, not just in the interface.
+Never store passwords manually.
+PART 7: UI AND DESIGN
+Preserve the existing premium visual identity.
+Colours:
+* Navy: #071B49.
+* Orange: #FF8500.
+* White: #FFFFFF.
+* Soft background: #F4F7FC.
+* WhatsApp green: #16A34A.
+Maintain:
+* Professional typography.
+* Premium product photographs.
+* Clean cards.
+* Consistent spacing.
+* Smooth navigation.
+* Responsive Android layouts.
+* Clear buttons.
+* Functional bottom navigation.
+Do not redesign everything unnecessarily.
+Improve only where required to accommodate the missing functionality.
+PART 8: TESTING
+Do not declare completion until the following have been tested:
+1. Customer email registration.
+2. Customer email login.
+3. Google login.
+4. Forgot password.
+5. Logout.
+6. Administrator login.
+7. Administrator access restrictions.
+8. Switching between admin and public portal.
+9. Adding a product.
+10. Uploading a product image.
+11. Updating product prices.
+12. Creating a new category.
+13. Updating delivery fees.
+14. Public catalogue updates.
+15. Add to Cart.
+16. Complete customer order form.
+17. Delivery selection.
+18. Pickup selection.
+19. Correct price calculations.
+20. WhatsApp message generation.
+21. Firestore order persistence.
+22. Customer data isolation.
+If any function is not working, fix it before declaring it complete.
+FINAL INSTRUCTION
+This is a corrective development task.
+Do not produce another static design.
+Do not rebuild the entire application.
+Do not remove existing customer data.
+Implement the missing authentication, administrator portal, product management, delivery management and complete customer order form in the existing Richard Home Logistics application.
+At the end, provide a precise report of what was fixed, what works, what requires Firebase console configuration and what has actually been tested.

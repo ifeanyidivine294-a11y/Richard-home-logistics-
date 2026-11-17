@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy: #071B49;
+    --brand-orange: #FF8500;
+    --brand-bg: #F4F7FC;
+    --brand-text: #172033;
+    --brand-whatsapp: #16A34A;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Smooth scroll and mobile responsiveness */
+  body {
+    background-color: #F4F7FC;
+    color: #172033;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar for horizontal categories and filters */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area insets for notched mobile screens */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0.5rem);
+}
